@@ -1,6 +1,11 @@
+using AssessmentProject.Installers;
+using AssessmentProject.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.InstallServices(builder.Configuration);
+builder.Services.AddScoped<ISkillServices, SkillService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
